@@ -25,5 +25,9 @@ class DataHandler
    return price
     
   end
+
+  def most_recent_price
+   return 0 #TODO: how to get this from that hash of hashes of hashes?
+  end
 end
 
