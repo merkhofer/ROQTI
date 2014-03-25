@@ -62,7 +62,7 @@ class Purchase
     end
     #if none of those stopped you ... I guess you can have your asset
     if @source_portfolio.withdraw_cash(@purchase_amount) #if you succesfully get the cash
-      if @security.buy(self) #this is not implemented, updates values, returns t on success/f on failure
+      if @security.buy() #this is not implemented, updates values, returns t on success/f on failure
         @status = "SUCCESS"
         return true
       else
