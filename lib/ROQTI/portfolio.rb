@@ -99,5 +99,14 @@ class Portfolio
     return @cash
   end
 
+  def withdraw_cash(withdrawal_amount)
+  #attempts to alter @cash, returns false on failure
+    if @cash - withdrawal_amount >= 0 
+      @cash = @cash - withdrawal_amount
+      return true
+    else
+      return false
+    end
+  end  
 
 end

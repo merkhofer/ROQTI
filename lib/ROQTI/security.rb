@@ -1,4 +1,5 @@
 class Security
+  attr_reader :num_shares_in_brokerage
   def initialize(ticker_symbol, num_shares = 0)
     @ticker_symbol = ticker_symbol
     @data_handler = DataHandler.new(self)
@@ -20,13 +21,23 @@ class Security
       puts "#{@assets[asset].portfolio_object.name} -> #{@assets[asset].quantity}"
     end
   end
-
-  def num_shares_in_brokerage()
-    return "Brokerage -> #{@ticker_symbol}: #{@num_shares_in_brokerage}"
-  end
   
   def day_closing_price(year, month, day)
     return @data_handler.retrieve(year, month, day).to_f
   end
-  
+
+  def current_price()
+    #TODO: return @data_handler.most_recent_price()
+    return 10
+  end
+
+  def to_s
+    #TODO: this is a stub I used for Purchase.to_s
+    return "SECURITY: #{@ticker_symbol}"
+  end
+
+  def buy
+    #TODO: is this where things are bought? TESTING STUB
+    return true
+  end
 end
